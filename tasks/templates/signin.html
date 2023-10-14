@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd; /* Color de fondo oscuro */
+      color: #fff; /* Color del texto */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container1 {
+      background-color: #444; /* Color del contenedor del formulario */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .login-input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .login-button {
+      background-color: #28a745; /* Color del botón */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .signup-button {
+      background-color: #007bff; /* Color del botón de registro */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="login-container1">
+    <h2>Login</h2>
+    {{error}}
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="username" id="id_username" class="login-input" placeholder="Usuario" value="jamreyes26@gmail.com"><br>
+      <input type="password" class="login-input" placeholder="Contraseña" name="password" id="id_password"><br>
+      <button type="submit" class="login-button" >Iniciar Sesión</button>
+      <button type="button" class="signup-button">Sign Up</button>
+    </form>
+  </div>
+</main>
+</body>
+
+</html>
+
+
+{% endblock %}
